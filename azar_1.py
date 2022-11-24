@@ -80,11 +80,17 @@
 # result = multiply()
 # print('result is : ', result)
 
-def func(name, family):
-    print(name, family)
+# def func(name, family):
+#     print(name, family)
 
 
-func("name", "family")
-func(family="family", name="name")
+# func("name", "family")
+# func(family="family", name="name")
 
 # kwargs
+
+
+# def save_user(**user):
+#     print(user)
+
+# save_user(id=1, name="paeizan",age="20")
