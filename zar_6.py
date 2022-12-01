@@ -54,3 +54,4 @@ else:
 
 # exercise: write above code three time and analys it
 # exercise : write a function to calculates n! > with recursive function and without recursive
+azar_3
