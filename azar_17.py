@@ -164,7 +164,95 @@
 # a()
 
 
-import calendar as cal
-import time
-import datetime
-print(cal.day_name[cal.weekday(2022, 12, 8)])
+# import calendar as cal
+# import time
+# import datetime
+# print(cal.day_name[cal.weekday(2022, 12, 8)])
+
+# try:
+#     file = open('f.txt', 'r')
+# except:
+#     print('Error occured!!!')
+# print()
+# print()
+# print()
+# print()
+# try:
+#     file = open('f.txt', 'w')
+# except:
+#     print('Error occured!!!')
+
+# for i in range(2):
+#     name = input('enter a name: ')
+#     file.write(name + '\n')
+# file.close()
+
+# try:
+#     file = open('f.txt', 'r')
+#     for line in file:
+#         print(line, end='')
+# except:
+#     print('error')
+# file.close()
+
+# with open('f.txt', 'r') as f:
+#     for line in f:
+#         print(line, end='')
+
+
+# with open('f.txt', 'a') as f:
+#     for i in range(5):
+#         name = input('enter a name: ')
+#         f.write(name+'\n')
+
+
+# set data type:
+
+# my_set1 = {1, 2, 3, 4, 5}
+# my_set2 = {2, 1, 4, 3, 5}
+# print(type(my_set1))
+# print(my_set1 == my_set2)
+
+# numbers1 = [1,2,3,4]
+# numbers2 = [4,3,1,2]
+# print(numbers1 == numbers2)
+
+# set data type is unordered and does not allow values
+# numbers = {1, 2, 3, 3, 4, 4}
+# print(numbers)
+
+# list elements must be immutable (can not change set items)
+# numbers = {(1, 2), 1}
+# set data type is mutable
+# numbers.add(5)
+# print(numbers)
+# numbers.remove((1,2))
+# print(numbers)
+
+numbers1 = {1, 2, 3, 4, 5}
+numbers2 = {1, 2, 6}
+numbers_union = numbers1.union(numbers2)
+# print(numbers_union)
+# another way for union اجتماع
+# numbers_union = numbers1 | numbers2
+# print(numbers_union)
+
+# numbers_intersect = numbers1.intersection(numbers2)
+# print(numbers_intersect)
+# another way for writting intersection اشتراک
+# numbers_intersect = numbers1 & numbers2
+# print(numbers_intersect)
+
+# numbers_dif = numbers1.difference(numbers2)
+# print(numbers_dif)
+# another way for writting difference:
+# numbers_intersect = numbers1 - numbers2
+# print(numbers_intersect)
+
+
+n1 = {1, 2, 3, 4}
+n2 = {1, 2}
+print(n2.issubset(n1))
+print(n1.issuperset(n2))
+print(n1 >= n2)
+print(n2 <= n1)
