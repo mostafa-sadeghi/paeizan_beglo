@@ -107,10 +107,10 @@ list2 = ['a', 'b', 'c']
 # output = zip(list1, list2)
 # print(list(output))
 
-output = []
-for i in range(len(list1)):
-    temp = tuple()
-    temp += (list1[i],)
-    temp += (list2[i],)
-    output.append(temp)
-print(output)
+# output = []
+# for i in range(len(list1)):
+#     temp = tuple()
+#     temp += (list1[i],)
+#     temp += (list2[i],)
+#     output.append(temp)
+# print(output)
