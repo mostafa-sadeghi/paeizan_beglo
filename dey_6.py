@@ -19,36 +19,36 @@
 
 # DRY dont repeat yourself
 
-class Animal:
-    def __init__(self):
-        self.age = 1
+# class Animal:
+#     def __init__(self):
+#         self.age = 1
 
-    def eat(self):
-        print("eat")
-
-
-class Mammal(Animal):
-
-    def __init__(self):
-        super().__init__()
-        self.weight = 5
-
-    def walk(self):
-        print("walk")
+#     def eat(self):
+#         print("eat")
 
 
-class Fish(Animal):
+# class Mammal(Animal):
 
-    def swim(self):
-        print(self)
+#     def __init__(self):
+#         super().__init__()
+#         self.weight = 5
+
+#     def walk(self):
+#         print("walk")
 
 
-cow = Mammal()
+# class Fish(Animal):
+
+#     def swim(self):
+#         print(self)
+
+
+# cow = Mammal()
 # cow.walk()
 # cow.eat()
 
-print(cow.weight)
-print(cow.age)
+# print(cow.weight)
+# print(cow.age)
 
 # print(isinstance(cow, Mammal))
 # print(isinstance(cow, Animal))
