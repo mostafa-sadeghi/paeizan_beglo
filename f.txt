@@ -1,5 +1,5 @@
-shanitia
-arash
+1.shanitia age=25
+2.arash age = 35
 nazi
 nasrin
 zahra
@@ -8,3 +8,5 @@ vihan
 roham
 arshia
 mahan
+
+[{"id": 1, "name": "terminator1", "year": 1998}, {"id": 2, "name": "terminator2", "year": 2002}]
