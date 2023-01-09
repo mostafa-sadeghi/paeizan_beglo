@@ -9,10 +9,10 @@ def greet():
 
 
 root = tk.Tk()
-style = ttk.Style(root)
-style.configure("TButton", foreground="pink")
-print(style.layout("TButton"))
-print(style.element_options("Button.label"))
+root.geometry("400x600")
+root.resizable(False, False)
+root.title('my app')
+root.iconbitmap('./crawlerProject/images/orange.ico')
 
 
 # my_label = ttk.Label(root, text="Hello every body", padding=20) # padding all sides
@@ -20,20 +20,20 @@ print(style.element_options("Button.label"))
 #     20, 50))  # padding left/right and top/bottom
 my_label = ttk.Label(root, text="Hello every body",
                      background="silver", padding=(20, 50, 10, 100))
-my_label.pack(fill="x")
+my_label.pack(fill="both", expand=True)
 
 
 greet_button = ttk.Button(
     root, text="سلام",  padding=10, command=greet)
 
-greet_button.pack(side="left", fill="y")
+greet_button.pack(side="left", fill="both", expand=True)
 greet_button = ttk.Button(root, text="خروج", padding=10,
                           command=root.quit)
 
-greet_button.pack(side="left", fill="y")
+greet_button.pack(side="left", fill="both", expand=True)
 greet_button = ttk.Button(root, text="خروج", padding=10, command=root.quit)
 
-greet_button.pack(side="left", fill="y")
+greet_button.pack(side="left", fill="both", expand=True)
 
 
 root.mainloop()
