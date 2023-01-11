@@ -43,8 +43,9 @@ root_frame.pack()
 
 first_frame = ttk.Frame(root_frame)
 first_frame.pack(pady=10)
-name_label = ttk.Label(first_frame, text="User Name", anchor="w", width=10)
-name_label.pack(side="left", padx=(0, 15))
+name_label = ttk.Label(first_frame, text="User Name",
+                       anchor="w", width=20)
+name_label.pack(side="left")
 
 name_entry = ttk.Entry(first_frame)
 name_entry.pack(side="left")
@@ -52,8 +53,8 @@ name_entry.pack(side="left")
 # adding family frame
 second_frame = ttk.Frame(root_frame)
 second_frame.pack(pady=10)
-family_label = ttk.Label(second_frame, text="Password", anchor="w", width=10)
-family_label.pack(side="left", padx=(0, 15))
+family_label = ttk.Label(second_frame, text="Password", anchor="w", width=20)
+family_label.pack(side="left")
 
 family_entry = ttk.Entry(second_frame)
 family_entry.pack(side="left")
