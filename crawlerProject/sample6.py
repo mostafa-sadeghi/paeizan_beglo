@@ -72,11 +72,53 @@ root.title("my app")
 
 # combobox widget
 
-weekday = tk.StringVar(value="select a day... ")
-weekday_combobox = ttk.Combobox(
-    root, textvariable=weekday, bootstyle="danger")
-weekday_combobox.pack(fill="both")
-weekday_combobox["values"] = (
-    "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun")
+# def handle_selection(e):
+#     print(weekday.get())
+#     print(weekday_combobox.current())
+#     print(weekday_combobox["values"][weekday_combobox.current()])
+
+
+# weekday = tk.StringVar(value="select a day... ")
+# weekday_combobox = ttk.Combobox(
+#     root, textvariable=weekday, bootstyle="danger")
+# weekday_combobox.pack(fill="both")
+# weekday_combobox["values"] = (
+#     "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun")
+# weekday_combobox.bind("<<ComboboxSelected>>", handle_selection)
+
+
+# List box
+# we can select multiple items
+# def handle_selection_change(e):
+#     selected_indices = langs_select.curselection()
+#     for i in selected_indices:
+#         print(langs_select.get(i))
+
+
+# programming_languages = ('python', 'java', 'c', 'c++', 'javascript', 'c#')
+# langs = tk.StringVar(value=programming_languages)
+# langs_select = tk.Listbox(root, width=80, height=10,
+#                           listvariable=langs, selectmode="extended") # selectmode = "browse"
+# langs_select.pack()
+# langs_select.bind("<<ListboxSelect>>", handle_selection_change)
+
+
+# spinbox
+# def spinbox_change():
+#     print(spinbox.get())
+# initial_value = tk.IntVar(value=10)
+# spinbox = ttk.Spinbox(root, from_=0, to=20,
+#                       textvariable=initial_value, bootstyle="success", wrap=True, command=spinbox_change)
+# spinbox.pack()
+
+# Scale
+def handle_scale(e):
+    print(scale.get())
+
+
+scale = ttk.Scale(root, bootstyle="primary",
+                  orient="horizontal", from_=0, to=10, command=handle_scale)
+scale.pack()
+
 
 root.mainloop()
