@@ -59,18 +59,35 @@ def delete():
 
 
 def edit():
+
     conn = sqlite3.connect('address_book.db')
     c = conn.cursor()
     record_id = delete_box.get()
-    sql = """UPDATE addresses SET 
+    sql = """UPDATE addresses SET
     first_name = :first,
     last_name = :last,
     address = :address,
-    city = :city,
+    city = :city
+    WHERE oid = :oid
     """
+    c.execute(sql, {
+        'first': f_name_update.get(),
+        'last': l_name_update.get(),
+        'address': address_update.get(),
+        'city': city_update.get(),
+        'oid': record_id
+    })
+    conn.commit()
+    conn.close()
+    editor.destroy()
 
 
 def update():
+    global f_name_update
+    global l_name_update
+    global address_update
+    global city_update
+    global editor
     editor = tk.Tk()
     editor.title('Update a record')
     editor.geometry('400x600')
@@ -82,16 +99,16 @@ def update():
     c.execute(sql)
     records = c.fetchall()
 
-    f_name = tk.Entry(editor, width=30)
-    f_name.grid(row=0, column=1, padx=20)
+    f_name_update = tk.Entry(editor, width=30)
+    f_name_update.grid(row=0, column=1, padx=20)
 
     # create entry boxes
-    l_name = tk.Entry(editor, width=30)
-    l_name.grid(row=1, column=1, padx=20)
-    address = tk.Entry(editor, width=30)
-    address.grid(row=2, column=1, padx=20)
-    city = tk.Entry(editor, width=30)
-    city.grid(row=3, column=1, padx=20)
+    l_name_update = tk.Entry(editor, width=30)
+    l_name_update.grid(row=1, column=1, padx=20)
+    address_update = tk.Entry(editor, width=30)
+    address_update.grid(row=2, column=1, padx=20)
+    city_update = tk.Entry(editor, width=30)
+    city_update.grid(row=3, column=1, padx=20)
 
     # create labels
     f_name_label = ttk.Label(editor, text="first name")
@@ -104,10 +121,10 @@ def update():
     city_label.grid(row=3, column=0, padx=20)
 
     for record in records:
-        f_name.insert(0, record[0])
-        l_name.insert(0, record[1])
-        address.insert(0, record[2])
-        city.insert(0, record[3])
+        f_name_update.insert(0, record[0])
+        l_name_update.insert(0, record[1])
+        address_update.insert(0, record[2])
+        city_update.insert(0, record[3])
 
     # submit button
     edit_button = ttk.Button(editor, text="Add record to db", command=edit)
